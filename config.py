@@ -2,7 +2,7 @@
 
 # Experiment config.
 
-subjects = {1:'m1',  # {box: subject_ID} 
+subjects = {1:'m1',  # {box: subject_ID}
             2:'m2',
                     }
 
@@ -15,6 +15,6 @@ camera_IDs = {1: 0,      # {box: camera_index}
 
 # Bonsai path config.
 
-bonsai_path = 'C:\\Bonsai\\Bonsai.exe'
+bonsai_path = '"C:\Users\mini2p_1_aux\AppData\Local\Bonsai\Bonsai.exe"'
 
-workflow_path = 'C:\\Camera_acquisition\\multi_recorder_cuda_CLI.bonsai'
+workflow_path = 'C:\Users\mini2p_1_aux\Documents\GitHub\Basler_Bonsai_multi_camera_acquisition'
