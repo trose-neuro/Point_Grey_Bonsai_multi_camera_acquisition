@@ -13,7 +13,7 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:PylonCapture">
                 <p1:SerialNumber>40086995</p1:SerialNumber>
-                <p1:ParameterFile>C:\Users\mini2p_1_aux\Documents\GitHub\behavior---bonsai_scripts\Bonsai video recording triggering tracking\top_60Hz_2bin_8bit_a2A1920-160umBAS_40086995.pfs</p1:ParameterFile>
+                <p1:ParameterFile>C:\Users\mini2p_1_aux\Documents\GitHub\behavior---bonsai_scripts\Bonsai video recording triggering tracking\top_crop_60Hz_2bin_8bit_a2A1920-160umBAS_40086995.pfs</p1:ParameterFile>
               </Combinator>
             </Expression>
             <Expression xsi:type="MemberSelector">
@@ -29,35 +29,7 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="cv:ImageWriter">
-          <cv:Path>\\.\pipe\videopipe1</cv:Path>
-          <cv:Suffix>None</cv:Suffix>
-          <cv:Overwrite>false</cv:Overwrite>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="NestedWorkflow">
-        <Name>Box2</Name>
-        <Workflow>
-          <Nodes>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="p1:PylonCapture">
-                <p1:SerialNumber>40144488</p1:SerialNumber>
-                <p1:ParameterFile>C:\Users\mini2p_1_aux\Documents\GitHub\behavior---bonsai_scripts\Bonsai video recording triggering tracking\bottom_60Hz_8bit_acA2500-60um_40144488.pfs</p1:ParameterFile>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="MemberSelector">
-              <Selector>Image</Selector>
-            </Expression>
-            <Expression xsi:type="WorkflowOutput" />
-          </Nodes>
-          <Edges>
-            <Edge From="0" To="1" Label="Source1" />
-            <Edge From="1" To="2" Label="Source1" />
-          </Edges>
-        </Workflow>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="cv:ImageWriter">
-          <cv:Path>\\.\pipe\videopipe2</cv:Path>
+          <cv:Path>\\.\pipe\videopipe0</cv:Path>
           <cv:Suffix>None</cv:Suffix>
           <cv:Overwrite>false</cv:Overwrite>
         </Combinator>
@@ -65,7 +37,6 @@
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
-      <Edge From="2" To="3" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
