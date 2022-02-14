@@ -16,4 +16,4 @@ camera_IDs = {1: 0,      # {box: camera_index}
 
 bonsai_path = 'C:\\Users\\mini2p_1_aux\\AppData\\Local\\Bonsai\\Bonsai.exe'
 
-workflow_path = 'C:\\Users\\mini2p_1_aux\\Documents\GitHub\\Basler_Bonsai_multi_camera_acquisition'
+workflow_path = 'C:\\Users\\mini2p_1_aux\\Documents\GitHub\\Basler_Bonsai_multi_camera_acquisition\\multi_recorder_cuda_CLI.bonsai'

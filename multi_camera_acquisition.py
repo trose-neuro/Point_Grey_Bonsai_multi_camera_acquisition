@@ -35,7 +35,7 @@ for box in camera_IDs.keys():
 
 # Launch Bonsai
 
-bonsai_process = Popen(command)
+#bonsai_process = Popen(command)
 
 # Launch FFMPEG instances once video pipes are open.
 
@@ -47,16 +47,19 @@ while not all(pipes_open):
     for i, (box, subject) in enumerate(subjects.items()):
         if not pipes_open[i]:
             pipe = r'\\.\pipe\videopipe' + str(box)
+            print(pipe)
             if pipe.split('\\')[-1] in os.listdir(r'\\.\pipe'):
                 pipes_open[i] = True
                 video_file_path = os.path.join(data_dir, subject + '_' + datetime_str + '.mp4')
+                print(video_file_path)
+                print(r'ffmpeg -y -f rawvideo -vcodec rawvideo -s 1280x1024 -pix_fmt gray -r 60 -i {} -c:v h264_nvenc -profile:v high -preset slow -an {}'.format(pipe, video_file_path))
                 ffmpeg_processes.append(Popen(r'ffmpeg -y -f rawvideo -vcodec rawvideo -s 1280x1024 -pix_fmt gray -r 60 -i {} -c:v h264_nvenc -profile:v high -preset slow -an {}'.format(pipe, video_file_path)))
-    time.sleep(0.1)
+    time.sleep(10)
 
 # Wait untill Bonsai has stopped running.
 
-while bonsai_process.poll() == None:
-    time.sleep(1)
+#while bonsai_process.poll() == None:
+#    time.sleep(1)
 
 print('Closing ffmpeg processes.')
 
